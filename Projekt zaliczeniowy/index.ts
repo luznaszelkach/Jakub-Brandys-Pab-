@@ -6,26 +6,26 @@ const app = express();
 app.use(bodyParser.json());
 
 
-const restaurantRoute = require("./routes/Restauracje");
-app.use("/restaurant", restaurantRoute);
+const restauracjaRoute = require("./routes/Restauracje");
+app.use("/restauracje", restauracjaRoute);
 
-const tableRoute = require("./routes/Stoliki");
-app.use("/tables", tableRoute);
+const stolikRoute = require("./routes/Stoliki");
+app.use("/stoliki", stolikRoute);
 
-const employeeRoute = require("./routes/Pracownicy");
-app.use("/employees", employeeRoute);
+const pracownikRoute = require("./routes/Pracownicy");
+app.use("/pracownicy", pracownikRoute);
 
-const bookingRoute = require("./routes/Rezerwacje");
-app.use("/bookings", bookingRoute);
+const rezerwacjaRoute = require("./routes/Rezerwacje");
+app.use("/rezerwacje", rezerwacjaRoute);
 
-const productRoute = require("./routes/Produkty");
-app.use("/products", productRoute);
+const produktRoute = require("./routes/Produkty");
+app.use("/produkty", produktRoute);
 
-const dishRoute = require("./routes/Dania");
-app.use("/dishes", dishRoute);
+const danieRoute = require("./routes/Dania");
+app.use("/dania", danieRoute);
 
-const orderRoute = require("./routes/Zamowienia");
-app.use("/orders", orderRoute);
+const zamowienieRoute = require("./routes/Zamowienia");
+app.use("/zamowienia", zamowienieRoute);
 
 
 
