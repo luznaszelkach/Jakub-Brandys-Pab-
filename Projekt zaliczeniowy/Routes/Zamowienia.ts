@@ -5,7 +5,6 @@ const router = express.Router();
 
 const Zamowienie = require("../models/Zamowienie");
 
-//Wyswietlanie listy wszystkich zamowien
 
 router.get("/", async (req: any, res: any) => {
     try {
@@ -19,7 +18,6 @@ router.get("/", async (req: any, res: any) => {
     }
 });
 
-//Wyswietlenie konkretnego zamowienia
 
 router.get("/:id", async (req: any, res: any) => {
     try {
@@ -34,7 +32,6 @@ router.get("/:id", async (req: any, res: any) => {
     }
 });
 
-//Raport zamowien per stolik (jako parametr podane id stolika)
 
 router.get("/table-raport/:id", async (req: any, res: any) => {
     try {
@@ -49,8 +46,6 @@ router.get("/table-raport/:id", async (req: any, res: any) => {
     }
 });
 
-//Raport zamowien per kelner (jako parametr podane id pracownika)
-
 router.get("/waiter-raport/:id", async (req: any, res: any) => {
     try {
         const orders = await Zamowienie.find({ pracownik: req.params.id });
@@ -64,7 +59,6 @@ router.get("/waiter-raport/:id", async (req: any, res: any) => {
     }
 });
 
-//Dodawanie zamowienia do bazy danych
 
 router.post("/", async (req: any, res: any) => {
 
@@ -84,7 +78,6 @@ router.post("/", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie zamowienia po ID
 
 router.delete("/:id", async (req: any, res: any) => {
     try {
@@ -99,7 +92,6 @@ router.delete("/:id", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie wszystkich zamowien
 
 router.delete("/", async (req: any, res: any) => {
     try {
@@ -114,7 +106,6 @@ router.delete("/", async (req: any, res: any) => {
     }
 });
 
-// Update zamowienia po ID
 
 router.put("/:id", async (req: any, res: any) => {
     try {

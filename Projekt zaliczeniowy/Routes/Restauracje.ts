@@ -3,7 +3,6 @@ const router = express.Router();
 
 const Restauracja = require("../models/Restauracja");
 
-// Wyœwietlenie restauracji
 
 router.get("/", async (req: any, res: any) => {
     try {
@@ -14,7 +13,6 @@ router.get("/", async (req: any, res: any) => {
     }
 });
 
-//Dodawanie restauracji do bazy danych
 
 router.post("/", async (req: any, res: any) => {
     const restauracja = await Restauracja.find();
@@ -41,7 +39,6 @@ router.post("/", async (req: any, res: any) => {
     }
 });
 
-// Usuwanie restauracji po ID
 
 router.delete("/:id", async (req: any, res: any) => {
     try {
@@ -55,8 +52,6 @@ router.delete("/:id", async (req: any, res: any) => {
         res.status(400).json({ message: error });
     }
 });
-
-// Update restauracji po ID
 
 router.put("/:id", async (req: any, res: any) => {
     try {

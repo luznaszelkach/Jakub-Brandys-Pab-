@@ -3,7 +3,6 @@ const router = express.Router();
 
 const Produkt = require("../models/Produkt");
 
-//Wyswietlenie listy wszystkich produktow z sortowaniem i paginacj¹ "?page=1&limit=2" - paginacja "?page=1&limit=2&sort=1" - paginacja i sortowanie
 
 router.get("/", async (req: any, res: any) => {
 
@@ -19,7 +18,6 @@ router.get("/", async (req: any, res: any) => {
     }
 });
 
-//Wyswietlenie konkretnego produktu
 
 router.get("/:id", async (req: any, res: any) => {
     try {
@@ -34,7 +32,6 @@ router.get("/:id", async (req: any, res: any) => {
     }
 });
 
-//Dodawanie produktów do bazy danych
 
 router.post("/", async (req: any, res: any) => {
     const newProdukt = new Produkt({
@@ -52,7 +49,6 @@ router.post("/", async (req: any, res: any) => {
     }
 });
 
-//Zglaszanie zapotrzebowania na produkty
 
 router.post("/to-buy", async (req: any, res: any) => {
     const newProdukt = new Produkt({
@@ -70,7 +66,6 @@ router.post("/to-buy", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie produktu po ID
 
 router.delete("/:id", async (req: any, res: any) => {
     try {
@@ -85,7 +80,6 @@ router.delete("/:id", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie wszystkich produktów
 
 router.delete("/", async (req: any, res: any) => {
     try {
@@ -100,7 +94,6 @@ router.delete("/", async (req: any, res: any) => {
     }
 });
 
-// Update produktu po ID
 
 router.put("/:id", async (req: any, res: any) => {
     try {

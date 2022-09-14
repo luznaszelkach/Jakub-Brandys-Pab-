@@ -5,7 +5,6 @@ const app = express();
 
 app.use(bodyParser.json());
 
-//IMPORT ROUTES
 
 const restaurantRoute = require("./routes/Restauracje");
 app.use("/restaurant", restaurantRoute);
@@ -28,7 +27,6 @@ app.use("/dishes", dishRoute);
 const orderRoute = require("./routes/Zamowienia");
 app.use("/orders", orderRoute);
 
-//DATABASE CONNECTION
 
 
 const connString = 'mongodb+srv://JakubJakub:JakubJakub@cluster0.lpyl8r2.mongodb.net/?retryWrites=true&w=majority';

@@ -7,7 +7,6 @@ const Rezerwacja = require("../models/Rezerwacja");
 const Stolik = require("../models/Stolik");
 
 
-//Wyswietlenie listy wszystkich rezerwacji
 
 router.get("/", async (req: any, res: any) => {
     try {
@@ -18,7 +17,6 @@ router.get("/", async (req: any, res: any) => {
     }
 });
 
-//Wyswietlenie konkretnej rezerwacji
 
 router.get("/:id", async (req: any, res: any) => {
     try {
@@ -33,7 +31,6 @@ router.get("/:id", async (req: any, res: any) => {
     }
 });
 
-//Dodanie rezerwacji do bazy danych
 
 router.post("/", async (req: any, res: any) => {
     const newRezerwacja = new Rezerwacja({
@@ -51,7 +48,6 @@ router.post("/", async (req: any, res: any) => {
     }
 });
 
-//Wyszukiwanie stolikow wolnych danego dnia
 
 router.post("/free", async (req: any, res: any) => {
     const stolik = await Stolik.find({ status: "wolny", iloscOsob: req.body.iloscOsob });
@@ -62,7 +58,6 @@ router.post("/free", async (req: any, res: any) => {
         res.send('Jest wolny stolik!')
 });
 
-//Usuwanie rezerwacji po ID
 
 router.delete("/:id", async (req: any, res: any) => {
     try {
@@ -77,8 +72,6 @@ router.delete("/:id", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie wszystkich rezerwacji
-
 router.delete("/", async (req: any, res: any) => {
     try {
         const rezerwacje = await Rezerwacja.remove();
@@ -92,7 +85,6 @@ router.delete("/", async (req: any, res: any) => {
     }
 });
 
-// Update stolika po ID
 
 router.put("/:id", async (req: any, res: any) => {
     try {

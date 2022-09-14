@@ -3,7 +3,6 @@ const router = express.Router();
 
 const Danie = require("../models/Danie");
 
-//Wyswietlanie listy wszystkich dañ
 
 router.get("/", async (req: any, res: any) => {
     try {
@@ -14,7 +13,6 @@ router.get("/", async (req: any, res: any) => {
     }
 });
 
-//Wyswietlenie konkretnego dania
 
 router.get("/:id", async (req: any, res: any) => {
     try {
@@ -29,7 +27,6 @@ router.get("/:id", async (req: any, res: any) => {
     }
 });
 
-//Dodawanie dañ do bazy danych
 
 router.post("/", async (req: any, res: any) => {
     const newDanie = new Danie({
@@ -46,7 +43,6 @@ router.post("/", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie dania po ID
 
 router.delete("/:id", async (req: any, res: any) => {
     try {
@@ -61,7 +57,6 @@ router.delete("/:id", async (req: any, res: any) => {
     }
 });
 
-//Usuwanie wszystkich dan
 
 router.delete("/", async (req: any, res: any) => {
     try {
@@ -76,7 +71,6 @@ router.delete("/", async (req: any, res: any) => {
     }
 });
 
-// Update dania po ID
 
 router.put("/:id", async (req: any, res: any) => {
     try {
